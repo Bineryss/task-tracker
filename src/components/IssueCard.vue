@@ -1,10 +1,15 @@
 <template>
     <div
-        class="bg-base-200 rounded-lg h-24 hover:outline hover:outline-1 hover:outline-primary grid grid-rows-[24px_1fr_minmax(0,_auto)] gap-1 px-2 pt-1 pb-2">
+        class="bg-base-400 rounded-lg h-24 hover:outline hover:outline-1 hover:outline-primary grid grid-rows-[24px_1fr_minmax(0,_auto)] gap-1 px-2 pt-1 pb-2 transition-colors duration-300">
         <div id="card-title">
             <div class="flex items-center gap-2 text-gray-400 text-sm">
-                <span
+                <span v-if="cardValues.state === 0" id="draft"
+                    class="outline-dashed outline-2 rounded-full aspect-square outline-offset-4 h-1 mx-1" />
+                <span v-else-if="cardValues.state === 1" id="open"
                     class="aspect-square h-1 bg-green-600 rounded-full outline outline-2 outline-green-600 outline-offset-4 mx-1" />
+                <span v-else-if="cardValues.state === 2" id="close"
+                    class="aspect-square h-1 rounded-full outline outline-2 outline-purple-600 outline-offset-4 mx-1" />
+                />
                 <h1>{{ cardValues.headline }}</h1>
                 <h1>{{ cardValues.id }}</h1>
             </div>
@@ -43,7 +48,7 @@ const tmpDB: Array<Card> = [
         id: "#11",
         headline: "Todo App schreiben",
         body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium distinctio molestias voluptate at sapiente, veniam facere laborum tempora, quis, rerum quo! Ad iusto voluptates nihil magnam ratione reprehenderit quam nulla.",
-        state: 0,
+        state: 1,
         labels: ['demo', 'app']
     },
     {
@@ -56,7 +61,7 @@ const tmpDB: Array<Card> = [
         id: "#13",
         headline: "Todo App schreiben",
         body: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium distinctio molestias voluptate at sapiente, veniam facere laborum tempora, quis, rerum quo! Ad iusto voluptates nihil magnam ratione reprehenderit quam nulla.",
-        state: 0,
+        state: 2,
         labels: ['demo', 'dev']
     }
 ]

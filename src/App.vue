@@ -5,9 +5,7 @@ import Board from './views/Board.vue';
 </script>
 
 <template>
-    <Board/>
+    <Board />
 </template>
 
-<style scoped>
-
-</style>
+<style scoped></style>
