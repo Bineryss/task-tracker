@@ -8,7 +8,9 @@
                 <span v-else-if="cardValues.state === 1" id="open"
                     class="aspect-square h-1 bg-green-600 rounded-full outline outline-2 outline-green-600 outline-offset-4 mx-1" />
                 <span v-else-if="cardValues.state === 2" id="close"
-                    class="aspect-square h-1 rounded-full outline outline-2 outline-purple-600 outline-offset-4 mx-1" />
+                    class="aspect-square h-4 flex items-center justify-center rounded-full border-2 border-purple-600" >
+                    <span class="aspect-square h-1 w-1 bg-purple-600 rounded-sm"/>
+                </span>
                 />
                 <h1>{{ cardValues.headline }}</h1>
                 <h1>{{ cardValues.id }}</h1>
